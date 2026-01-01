@@ -1,4 +1,5 @@
 import React from 'react';
+import ColorBends from './components/ColorBends';
 
 // Social Media Data
 const socialLinks = [
@@ -71,27 +72,37 @@ const recruitmentButtons = [
 const App: React.FC = () => {
   return (
     <div className="min-h-screen w-full bg-black relative overflow-hidden flex flex-col text-white selection:bg-white selection:text-black">
-      
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0 select-none pointer-events-none">
-        <div className="absolute inset-0 bg-black opacity-30 z-10"></div>
-        <div 
-          className="w-full h-full bg-cover bg-center opacity-80"
-          style={{ backgroundImage: "url('/bg.png')" }}
-        ></div>
+      {/* Color Bends Background from React Bits */}
+      <div className="absolute inset-0 z-0">
+        <ColorBends
+          className="w-full h-full"
+          rotation={45}
+          speed={0.2}
+          colors={['#FF5733', '#33FF57', '#3357FF', '#FF33A8', '#FFD700', '#00FFFF']}
+          transparent={true}
+          autoRotate={0.5}
+          scale={1}
+          frequency={1}
+          warpStrength={1}
+          mouseInfluence={1}
+          parallax={0.5}
+          noise={0.1}
+        />
       </div>
 
-    <div className="absolute top-8 right-8 md:top-12 md:right-16 z-50">
+      <div className="relative z-10 w-full h-full flex flex-col">
+        {/* Logo */}
+        <div className="absolute top-8 right-8 md:top-12 md:right-16 z-50 pointer-events-auto">
           <img 
             src="/logo.png" 
             alt="Logo" 
             className="w-32 md:w-48 h-auto object-contain"
           />
-      </div>
+        </div>
 
-      {/* Main Content Area */}
-      {/* Using a single flex column container for the whole page content to manage vertical flow better */}
-      <main className="flex-1 flex flex-col px-6 md:px-16 lg:px-24 pt-8 md:pt-14 pb-12 z-10 w-full max-w-8xl mx-auto relative h-full">
+        {/* Main Content Area */}
+        {/* Using a single flex column container for the whole page content to manage vertical flow better */}
+        <main className="flex-1 flex flex-col px-6 md:px-16 lg:px-24 pt-8 md:pt-14 pb-12 w-full max-w-8xl mx-auto relative h-full pointer-events-auto">
         
         {/* Inner Content Wrapper to Anchor the Vertical Line Correctly relative to content */}
         <div className="relative flex-1 flex flex-col h-full w-full">
@@ -201,6 +212,7 @@ const App: React.FC = () => {
 
         </div>
       </main>
+      </div>
     </div>
   );
 };
