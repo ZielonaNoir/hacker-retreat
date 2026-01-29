@@ -35,12 +35,9 @@ export default function Partners() {
       <div className="relative w-full flex overflow-x-hidden group mask-linear-gradient">
         <div className="animate-marquee whitespace-nowrap flex items-center gap-20 pl-6">
           {[...partners, ...partners, ...partners].map((partner, index) => (
-            <a
+            <div
               key={`${partner.name}-${index}`}
-              href={partner.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-center justify-center gap-4 hover:opacity-80 transition-opacity cursor-pointer select-none min-w-[200px]"
+              className="flex flex-col items-center justify-center gap-4 select-none min-w-[200px]"
             >
               {/* Logo */}
               <div className="h-16 w-auto flex items-center justify-center">
@@ -62,10 +59,10 @@ export default function Partners() {
                 />
               </div>
               {/* Text */}
-              <span className="text-lg md:text-xl font-bold text-gray-400 uppercase tracking-widest hover:text-[#14F195] transition-colors text-center">
+              <span className="text-lg md:text-xl font-bold text-gray-400 uppercase tracking-widest text-center">
                 {partner.name}
               </span>
-            </a>
+            </div>
           ))}
         </div>
         
