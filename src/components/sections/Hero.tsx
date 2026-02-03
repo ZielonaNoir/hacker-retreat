@@ -73,7 +73,7 @@ export default function Hero() {
               Join the Network
             </a>
             <a
-              href="https://www.notion.so/WebPsy-Labs-2b4591d5633980bb87b3ee666e115e6e"
+              href="https://webpsy.notion.site/c9bc71b06fe84eff959251a90da955f6?v=74467a5f965248d7b696bd8c2ebb848b&source=copy_link"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 border border-white/20 text-white font-bold text-sm rounded-full hover:bg-white/10 transition-colors hover:border-white"
