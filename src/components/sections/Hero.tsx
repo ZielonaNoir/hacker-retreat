@@ -55,7 +55,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg md:text-xl text-gray-400 max-w-3xl font-normal leading-relaxed mb-12"
           >
-            WebPsy Labs is a frontier hacker agency formed by elite builders across AI, Web3, and biotechnology, shaping next-generation paradigms for technology, brand, and growth.
+            WebPsy Labs is a frontier hacker agency formed by elite builders across AI, Web3, and BioTech, shaping next-generation paradigms for technology, brand, and growth.
           </motion.p>
 
           <motion.div

@@ -18,7 +18,6 @@ export default function Partners() {
     { name: '4seas', url: 'https://4seas.xyz', logo: '/4seas.webp' },
     { name: 'LXDAO', url: 'http://lxdao.io', logo: '/LXDAO.webp' },
     { name: 'Yellow Incubator', url: 'https://www.yellowincubator.com', logo: '/yellow.webp' },
-    { name: 'Lychee Lab', url: 'https://www.lychee-lab.com', logo: '/Lycheelab.webp' },
     // Media Partners
     { name: 'Odaily', url: 'https://www.odaily.news/en', logo: '/ODAILY.webp' },
     { name: 'PANews', url: 'http://panewslab.com/en', logo: '/PANews.webp' },
@@ -58,10 +57,7 @@ export default function Partners() {
                   }}
                 />
               </div>
-              {/* Text */}
-              <span className="text-lg md:text-xl font-bold text-gray-400 uppercase tracking-widest text-center">
-                {partner.name}
-              </span>
+              </div>
             </div>
           ))}
         </div>
