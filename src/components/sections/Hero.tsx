@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ColorBends from '../ColorBends';
+import ScrambleText from '../visuals/ScrambleText';
+import MagneticButton from '../ui/MagneticButton';
 
 export default function Hero() {
   return (
@@ -8,7 +10,7 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 w-full">
         {/* Title Box with ColorBends Background */}
-        <div className="relative w-screen h-[100vh] overflow-hidden p-8 md:p-12">
+        <div className="relative w-screen h-screen overflow-hidden p-8 md:p-12">
           {/* ColorBends Background for Title Box */}
           <div className="absolute inset-0 z-0">
             <ColorBends
@@ -35,19 +37,21 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
             className="mb-8"
           >
-            <span className="inline-block py-1.5 px-4 border border-[#14F195]/30 rounded-full bg-[#14F195]/10 text-[10px] font-bold tracking-[0.1em] uppercase text-[#14F195]">
+            <span className="inline-block py-1.5 px-4 border border-[#14F195]/30 rounded-full bg-[#14F195]/10 text-[10px] font-bold tracking-widest uppercase text-[#14F195]">
               POWERED BY MYCOFI PROTOCOL
             </span>
           </motion.div>
 
-          <motion.h1
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl md:text-6xl lg:text-5xl font-medium tracking-tighter text-white leading-[1.1] mb-8"
+            className="mb-8"
           >
-            WebPsy Labs
-          </motion.h1>
+            <h1 className="text-4xl md:text-6xl lg:text-5xl font-medium tracking-tighter text-white leading-[1.1]">
+              <ScrambleText text="WebPsy Labs" delay={0.5} />
+            </h1>
+          </motion.div>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -55,7 +59,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg md:text-xl text-gray-400 max-w-3xl font-normal leading-relaxed mb-12"
           >
-            WebPsy Labs is a frontier hacker agency formed by elite builders across AI, Web3, and BioTech, shaping next-generation paradigms for technology, brand, and growth.
+            WebPsy Labs is a frontier hacker agency formed by elite builders across <ScrambleText text="AI" delay={1.2} className="text-white" />, <ScrambleText text="Web3" delay={1.4} className="text-white" />, and <ScrambleText text="BioTech" delay={1.6} className="text-white" />, shaping next-generation paradigms for technology, brand, and growth.
           </motion.p>
 
           <motion.div
@@ -64,22 +68,22 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col sm:flex-row items-start gap-4"
           >
-            <a
+            <MagneticButton
               href="https://t.me/+hcJ97ZnmLVZhNDQ1"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-white text-black font-bold text-sm rounded-full hover:bg-gray-200 transition-colors"
+              className="px-8 py-4 bg-white text-black font-bold text-sm rounded-full hover:bg-gray-200 transition-colors inline-block text-center"
             >
               Join the Network
-            </a>
-            <a
+            </MagneticButton>
+            <MagneticButton
               href="https://webpsy.notion.site/c9bc71b06fe84eff959251a90da955f6?v=74467a5f965248d7b696bd8c2ebb848b&source=copy_link"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 border border-white/20 text-white font-bold text-sm rounded-full hover:bg-white/10 transition-colors hover:border-white"
+              className="px-8 py-4 border border-white/20 text-white font-bold text-sm rounded-full hover:bg-white/10 transition-colors hover:border-white inline-block text-center"
             >
               View Concept Deck
-            </a>
+            </MagneticButton>
           </motion.div>
             </div>
           </div>

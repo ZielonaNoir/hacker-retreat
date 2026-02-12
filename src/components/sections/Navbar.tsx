@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
+import MagneticButton from '../ui/MagneticButton';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -56,14 +57,14 @@ export default function Navbar() {
 
           {/* Right: CTA (Desktop) */}
           <div className="hidden md:flex items-center gap-4">
-            <a 
+            <MagneticButton 
               href="https://t.me/+hcJ97ZnmLVZhNDQ1" 
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex px-5 py-2.5 bg-white text-black text-sm font-semibold hover:bg-gray-200 transition-colors rounded-full"
             >
               Connect
-            </a>
+            </MagneticButton>
           </div>
 
           {/* Mobile Menu Button */}

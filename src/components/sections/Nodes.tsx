@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import TiltCard from '../ui/TiltCard';
 
 // Icons
 const InstagramIcon = () => (
@@ -107,50 +108,49 @@ export default function Nodes() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group relative bg-black/40 backdrop-blur-md border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:border-white/30 hover:-translate-y-1"
             >
-              {/* Avatar */}
-              <div className="flex flex-col items-center space-y-4">
-                <div className="relative w-28 h-28 rounded-full overflow-hidden border-2 border-white/20 group-hover:border-white/50 transition-all duration-300 group-hover:scale-105">
-                  <img
-                    src={member.avatar}
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                  />
+              <TiltCard className="h-full group relative bg-black/40 backdrop-blur-md border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:border-white/30">
+                {/* Avatar */}
+                <div className="flex flex-col items-center space-y-4">
+                  <div className="relative w-28 h-28 rounded-full overflow-hidden border-2 border-white/20 group-hover:border-white/50 transition-all duration-300 group-hover:scale-105">
+                    <img
+                      src={member.avatar}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+
+                  {/* Name */}
+                  <h4 className="text-xl font-bold text-white text-center tracking-tight">
+                    {member.name}
+                  </h4>
+
+                  {/* Title */}
+                  <div className="text-sm text-gray-400 text-center font-light leading-relaxed min-h-12">
+                    {member.title}
+                  </div>
+
+                  {/* Social Links */}
+                  <div className="flex items-center gap-3 justify-center min-h-6">
+                    {member.socials && member.socials.map((social, sIndex) => (
+                      <a 
+                          key={sIndex}
+                          href={social.url}
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1.5 text-gray-500 hover:text-white transition-colors cursor-pointer p-1"
+                          title={social.name}
+                          onPointerDown={(e) => e.stopPropagation()}
+                      >
+                          {social.icon}
+                          <span className="text-[10px] uppercase tracking-wider font-medium hidden group-hover:block transition-all">
+                              {social.name}
+                          </span>
+                      </a>
+                    ))}
+                 </div>
                 </div>
-
-                {/* Name */}
-                <h4 className="text-xl font-bold text-white text-center tracking-tight">
-                  {member.name}
-                </h4>
-
-                {/* Title */}
-                <div className="text-sm text-gray-400 text-center font-light leading-relaxed min-h-[3rem]">
-                  {member.title}
-                </div>
-
-                {/* Social Links */}
-                <div className="flex items-center gap-3 justify-center min-h-[1.5rem]">
-                  {member.socials && member.socials.map((social, sIndex) => (
-                    <a 
-                        key={sIndex}
-                        href={social.url}
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 text-gray-500 hover:text-white transition-colors cursor-pointer p-1"
-                        title={social.name}
-                    >
-                        {social.icon}
-                        <span className="text-[10px] uppercase tracking-wider font-medium hidden group-hover:block transition-all">
-                            {social.name}
-                        </span>
-                    </a>
-                  ))}
-               </div>
-              </div>
-
-              {/* Glow Effect */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl bg-gradient-to-br from-purple-500/10 via-transparent to-cyan-500/10 pointer-events-none" />
+              </TiltCard>
             </motion.div>
           ))}
         </div>
