@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { motion, useMotionTemplate, useMotionValue, useSpring } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
 interface TiltCardProps {
   children: React.ReactNode;
@@ -31,8 +31,9 @@ const TiltCard: React.FC<TiltCardProps> = ({ children, className = "" }) => {
     y.set(0);
   }
 
-  const rotateX = useMotionTemplate`${mouseY.get() * -20}deg`; // Inverted Y for natural tilt
-  const rotateY = useMotionTemplate`${mouseX.get() * 20}deg`;
+  // Use useTransform to map values to degrees
+  const rotateX = useTransform(mouseY, (value) => value * -20);
+  const rotateY = useTransform(mouseX, (value) => value * 20);
 
   return (
     <motion.div
@@ -40,12 +41,11 @@ const TiltCard: React.FC<TiltCardProps> = ({ children, className = "" }) => {
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
       style={{
+        rotateX,
+        rotateY,
         transformStyle: "preserve-3d",
-        rotateX, // These don't work directly in style if they rely on get() inside template without being motion values themselves. 
-                 // Actually useMotionTemplate returns a MotionValue, so this is correct.
-        rotateY
       }}
-      className={`relative transition-all duration-200 ease-linear group ${className}`}
+      className={`relative transition-all duration-200 ease-linear group perspective-[1000px] ${className}`}
     >
         <div style={{ transform: "translateZ(20px)" }} className="h-full w-full">
             {children}
