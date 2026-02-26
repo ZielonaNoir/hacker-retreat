@@ -6,13 +6,13 @@ import MagneticButton from '../ui/MagneticButton';
 
 export default function Hero() {
   return (
-    <div className="relative min-h-[90vh] flex items-center overflow-hidden bg-black">
+    <div className="relative min-h-screen flex items-center overflow-hidden bg-black">
       {/* Content */}
       <div className="relative z-10 w-full">
-        {/* Title Box with ColorBends Background */}
-        <div className="relative w-screen h-screen overflow-hidden p-8 md:p-12">
-          {/* ColorBends Background for Title Box */}
-          <div className="absolute inset-0 z-0">
+        {/* Title Box with ColorBends Background - full screen */}
+        <div className="relative w-screen min-h-screen overflow-hidden p-6 md:p-12">
+          {/* ColorBends full background - fills viewport */}
+          <div className="absolute inset-0 z-0 min-h-full min-w-full">
             <ColorBends
               className="w-full h-full"
               rotation={45}
@@ -29,8 +29,8 @@ export default function Hero() {
             />
           </div>
           {/* Content Layer */}
-          <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 pt-32">
-            <div className="max-w-4xl">
+          <div className="relative z-10 max-w-[1440px] mx-auto px-4 md:px-12 pt-24 md:pt-32">
+            <div className="max-w-4xl md:max-w-2xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -46,9 +46,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-8"
+            className="mb-6"
           >
-            <h1 className="text-4xl md:text-6xl lg:text-5xl font-medium tracking-tighter text-white leading-[1.1]">
+            <h1 className="font-pixel text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-none whitespace-nowrap">
               <ScrambleText text="WebPsy Labs" delay={0.5} />
             </h1>
           </motion.div>
@@ -57,7 +57,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-xl text-gray-400 max-w-3xl font-normal leading-relaxed mb-12"
+            className="text-sm md:text-base text-gray-400 max-w-[75%] font-normal leading-snug mb-10"
           >
             WebPsy Labs is a frontier hacker agency formed by elite builders across <ScrambleText text="AI" delay={1.2} className="text-white" />, <ScrambleText text="Web3" delay={1.4} className="text-white" />, and <ScrambleText text="BioTech" delay={1.6} className="text-white" />, shaping next-generation paradigms for technology, brand, and growth.
           </motion.p>
@@ -66,13 +66,13 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row items-start gap-4"
+            className="flex flex-col sm:flex-row flex-wrap items-start gap-3"
           >
             <MagneticButton
               href="https://t.me/+hcJ97ZnmLVZhNDQ1"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-white text-black font-bold text-sm rounded-full hover:bg-gray-200 transition-colors inline-block text-center"
+              className="px-6 py-3 sm:px-8 sm:py-4 bg-white text-black font-bold text-sm rounded-full hover:bg-gray-200 transition-colors inline-block text-center"
             >
               Join the Network
             </MagneticButton>
@@ -80,9 +80,17 @@ export default function Hero() {
               href="https://webpsy.notion.site/c9bc71b06fe84eff959251a90da955f6?v=74467a5f965248d7b696bd8c2ebb848b&source=copy_link"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 border border-white/20 text-white font-bold text-sm rounded-full hover:bg-white/10 transition-colors hover:border-white inline-block text-center"
+              className="px-6 py-3 sm:px-8 sm:py-4 border border-white/20 text-white font-bold text-sm rounded-full hover:bg-white/10 transition-colors hover:border-white inline-block text-center"
             >
               View Concept Deck
+            </MagneticButton>
+            <MagneticButton
+              href="https://luma.com/user/webpsy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 sm:px-8 sm:py-4 border border-[#14F195]/50 text-[#14F195] font-bold text-sm rounded-full hover:bg-[#14F195]/10 transition-colors inline-block text-center"
+            >
+              FinTech Event
             </MagneticButton>
           </motion.div>
             </div>
