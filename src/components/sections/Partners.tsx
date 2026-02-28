@@ -28,9 +28,9 @@ export default function Partners() {
   return (
     <div className="w-full bg-black py-16 border-y border-white/5 overflow-hidden relative z-20" id="partners">
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 mb-8">
-         <p className="text-sm text-gray-500 uppercase tracking-widest font-semibold">Powering the ecosystem</p>
+        <p className="text-sm text-gray-500 uppercase tracking-widest font-semibold">Powering the ecosystem</p>
       </div>
-      
+
       <div className="relative w-full flex overflow-x-hidden group mask-linear-gradient">
         <div className="animate-marquee whitespace-nowrap flex items-center gap-20 pl-6">
           {[...partners, ...partners, ...partners].map((partner, index) => (
@@ -60,12 +60,12 @@ export default function Partners() {
             </div>
           ))}
         </div>
-        
+
         {/* Gradients to fade edges */}
         <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-black to-transparent z-10"></div>
         <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-black to-transparent z-10"></div>
       </div>
-      
+
       <style>{`
         .animate-marquee {
           animation: marquee 60s linear infinite;

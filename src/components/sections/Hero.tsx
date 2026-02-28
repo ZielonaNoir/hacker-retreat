@@ -48,7 +48,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mb-6"
           >
-            <h1 className="font-pixel text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-none whitespace-nowrap">
+            <h1 className="font-pixel-fine text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight text-white leading-none whitespace-nowrap">
               <ScrambleText text="WebPsy Labs" delay={0.5} />
             </h1>
           </motion.div>

@@ -11,6 +11,11 @@ body {
   font-family: 'Silkscreen', cursive;
 }
 
+/* 颗粒更细的像素字体，适合大标题 */
+.font-pixel-fine {
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
 /* Custom selection color */
 ::selection {
   background: #ffffff;
